@@ -7,7 +7,11 @@ def requester(url: str):
     for retry in range(5):
         try:
             response = requests.get(url, headers=headers)
-            return response
-        except:
-            pass
-    return
+            if response.status_code == 200:
+                return response
+            else:
+                raise Exception("Неудачный запрос, код ответа: {}".format(response.status_code))
+        except Exception as e:
+            print("Произошла ошибка: ", e)
+            continue
+    raise Exception("Не удалось выполнить запрос после 5 попыток")
