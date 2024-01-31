@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+  <h1>{% trans "Purchase Plans" %}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{% trans "Plan Number" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for purchase_plan in purchase_plans %}
+        <tr>
+          <td><a href="{% url 'purchase_app:purchase_details' purchase_plan.externalId %}">{{ purchase_plan.planNumber }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
