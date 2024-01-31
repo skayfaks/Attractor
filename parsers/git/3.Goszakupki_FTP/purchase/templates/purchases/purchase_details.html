@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+    <h1>{% trans "Purchases" %}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans "External ID" %}</th>
+                <th>{% trans "Total Price" %}</th>
+                <th>{% trans "Purchase Object Info" %}</th>
+                <th>{% trans "Publish Year" %}</th>
+                <th>{% trans "Purchase Files" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ purchase.externalId }}</td>
+                <td>{{ purchase.total_price }}</td>
+                <td>{{ purchase.purchase_object_info }}</td>
+                <td>{{ purchase.publish_year }}</td>
+                <td>{{ purchase.purchase_files }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
