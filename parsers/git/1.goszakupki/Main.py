@@ -169,11 +169,6 @@ for primechanie in compare["Примечания"]:
         worksheet.write(i, 13, primechanie, cell_format11)
     i+=1
 
-
-
 writer.save()
 
 #parse_page(driver, total_links)
-
-
-
